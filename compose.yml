@@ -1,0 +1,12 @@
+volumes:
+  test-db-data:
+
+services:
+  db:
+    image: postgres:14
+    ports:
+      - "5678:5432"
+    environment:
+      POSTGRES_DB: test_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password

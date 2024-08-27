@@ -1,0 +1,28 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["relationJoins"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("POSTGRES_URL")
+}
+
+model A {
+  id  String @id @default(uuid())
+  bs  B[]
+}
+
+model B {
+  id  String  @id @default(uuid())
+  a   A   @relation(fields: [aId], references: [id])
+  aId String
+
+  cs  C[]
+}
+
+model C {
+  id   String @id @default(uuid())
+  name String
+  bs B[]
+}
