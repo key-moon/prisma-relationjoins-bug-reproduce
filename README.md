@@ -1,11 +1,11 @@
-# reproduce repository for 
+# reproduce repository for relationJoins related bug
 
 ```
 # instal
 pnpm i
 # setup db
 docker compose up -d
-pnpm prisma push
+pnpm dotenv -e .env -- prisma db push 
 # run PoC
 pnpm dotenv -e .env -- ts-node script.ts
 ```
