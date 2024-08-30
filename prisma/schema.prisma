@@ -23,6 +23,5 @@ model B {
 
 model C {
   id   String @id @default(uuid())
-  name String
   bs B[]
 }

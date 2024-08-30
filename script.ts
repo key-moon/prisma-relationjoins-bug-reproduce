@@ -8,9 +8,7 @@ async function main() {
       bs: {
         where: {
           cs: {
-            every: {
-              name: "a"
-            },
+            every: {},
           },
         }
       }
